@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $1 -ne 0 ]; then
+  PRIORITY=daemon.error
+else
+  PRIORITY=daemon.info
+fi
+
+logger -p ${PRIORITY} -t runit "mimic exited with status $1"

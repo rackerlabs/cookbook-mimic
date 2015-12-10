@@ -1,0 +1,10 @@
+#!/bin/bash
+
+NAME=mimic
+DIR=<%= node["mimic"]["path"] %>
+TWISTD=<%= node["mimic"]["virtualenv"] %>/bin/twistd
+OWNER=<%= node["mimic"]["owner"] %>
+
+logger -p daemon.info -t runit "${NAME} service starting"
+export PYTHONPATH=${DIR}:${PYTHONPATH}
+exec chpst -u ${OWNER} ${TWISTD} -n ${NAME} --realtime --verbose
