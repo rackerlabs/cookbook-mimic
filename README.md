@@ -11,7 +11,7 @@ at `node["mimic"]["path"]`
 [Vagrant](2) example:
 ```
 Vagrant.configure("2") do |config|
-  config.vm.synced_folder "/home/src/path", "`node["mimic"]["path"]`"
+  config.vm.synced_folder "/home/src/path", "/opt/mimic"
 end
 ```
 
