@@ -1,7 +1,6 @@
 include_recipe 'python'
 include_recipe 'runit'
 
-path = node['mimic']['path']
 venv = node['mimic']['virtualenv']
 
 %w(libffi6 libffi-dev).each do |pkg|
@@ -22,7 +21,7 @@ if node['mimic']['dev']
   bash 'install provided mimic' do
     code <<-CODE
       source #{venv}/bin/activate
-      cd #{path}
+      cd #{node['mimic']['path']}
       pip install -r requirements/production.txt
       pip install -e .
     CODE
