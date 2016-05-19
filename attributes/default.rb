@@ -1,9 +1,10 @@
-default["mimic"]["owner"] = "daemon"
-default["mimic"]["group"] = "daemon"
+default['mimic']['owner'] = 'daemon'
+default['mimic']['group'] = 'daemon'
 
-default["mimic"]["path"] = "/opt/mimic"
-default["mimic"]["virtualenv"] = "/srv/mimic"
+default['mimic']['path'] = '/opt/mimic'
+default['mimic']['virtualenv'] = '/srv/mimic'
 
-default["mimic"]["version"] = nil
+default['mimic']['version'] = nil
+default['mimic']['runit_actions'] = ['enable', 'start']
 
-default["mimic"]["dev"] = false
+default['mimic']['dev'] = false

@@ -34,11 +34,11 @@ else
   end
 end
 
-runit_service "mimic" do
+runit_service 'mimic' do
   default_logger true
   finish true
-  owner node["mimic"]["owner"]
-  group node["mimic"]["group"]
-  action [:enable, :start]
+  owner node['mimic']['owner']
+  group node['mimic']['group']
+  action node['mimic']['runit_actions'].map(&:to_sym)
   retries 2
 end
