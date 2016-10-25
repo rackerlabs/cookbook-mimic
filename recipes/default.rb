@@ -41,4 +41,5 @@ runit_service 'mimic' do
   group node['mimic']['group']
   action node['mimic']['runit_actions'].map(&:to_sym)
   retries 2
+  start_down node['mimic']['disabled']
 end
