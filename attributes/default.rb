@@ -8,3 +8,5 @@ default['mimic']['version'] = nil
 default['mimic']['runit_actions'] = ['enable', 'start']
 
 default['mimic']['dev'] = false
+
+defafult['mimic']['disabled'] = false
