@@ -9,4 +9,4 @@ default['mimic']['runit_actions'] = %w(enable start)
 
 default['mimic']['dev'] = false
 
-defafult['mimic']['disabled'] = false
+default['mimic']['disabled'] = false
