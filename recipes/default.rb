@@ -32,14 +32,15 @@ else
     version node['mimic']['version'] unless node['mimic']['version'].nil?
     virtualenv venv
   end
-  # Automat versions beyond 20.2.0 do not work with Python 2. Until we migrate to python-3 override the
-  # dependency installed with mimic
-  if node['Automat']
-    python_pip 'Automat' do
-      action :install
-      version node['Automat']['version'] unless node['Automat']['version'].nil?
-      virtualenv venv
-    end
+end
+
+# Automat versions beyond 20.2.0 do not work with Python 2. Until we migrate to python-3 override the
+# dependency installed with mimic
+if node['Automat']
+  python_pip 'Automat' do
+    action :install
+    version node['Automat']['version'] unless node['Automat']['version'].nil?
+    virtualenv venv
   end
 end
 
