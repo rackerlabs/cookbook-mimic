@@ -8,5 +8,4 @@ version          '0.0.5'
 
 supports 'ubuntu'
 
-depends 'python'
 depends 'runit'
