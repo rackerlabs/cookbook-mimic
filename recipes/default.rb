@@ -53,6 +53,7 @@ if node['Automat']
       source #{venv}/bin/activate
       #{automat_install_string}
     CODE
+  end
 end
 
 runit_service 'mimic' do
