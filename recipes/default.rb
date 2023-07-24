@@ -39,6 +39,7 @@ else
       source #{venv}/bin/activate
       #{mimic_install_string}
     CODE
+  end
 end
 
 # Automat versions beyond 20.2.0 do not work with Python 2. Until we migrate to python-3 override the
