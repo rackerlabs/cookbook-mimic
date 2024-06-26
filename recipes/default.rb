@@ -3,7 +3,12 @@ include_recipe 'runit'
 package 'python-virtualenv'
 venv = node['mimic']['virtualenv']
 
-%w(libffi6 libffi-dev).each do |pkg|
+packages = %w(libffi6 libffi-dev)
+if node['lsb']['release'] >= '20'
+  packages = %w(libffi7 libffi-dev)
+end
+
+packages.each do |pkg|
   package pkg do
     action :install
   end
